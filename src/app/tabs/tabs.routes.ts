@@ -22,6 +22,11 @@ export const routes: Routes = [
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
       {
+        path: 'scss',
+        loadComponent: () => 
+          import('../scss/scss.page').then((m) => m.ScssPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',
