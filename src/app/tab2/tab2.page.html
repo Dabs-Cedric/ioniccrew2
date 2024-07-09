@@ -13,5 +13,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Ionic page"></app-explore-container>
+ 
+<div class="tableau-container">
+    <h2>Tableau Non Trié :</h2>
+    <ul class="liste-centree">
+      <li *ngFor="let item of tableauNonTrie" >{{ item }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="tableauTrie.length > 0" class="tableau-container">
+    <h2>Tableau Trié :</h2>
+    <ul class="liste-centree">
+      <li *ngFor="let item of tableauTrie" >{{ item }}</li>
+    </ul>
+  </div>
+  
+
+  <div class="button-container" *ngIf="showButton">
+    <ion-button class="green-button" (click)="trierEtAfficher()">Trier et Afficher</ion-button>
+  </div>
+  
+
+  
+  
 </ion-content>

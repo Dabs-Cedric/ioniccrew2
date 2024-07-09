@@ -12,9 +12,16 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class ScssPage implements OnInit {
 
-  constructor() { }
+  constructor() {}
+   
 
   ngOnInit() {
   }
+  
+
+  
+
+
+
 
 }
