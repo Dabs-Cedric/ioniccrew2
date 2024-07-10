@@ -3,13 +3,14 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
 import { CommonModule } from '@angular/common';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { IonicModule } from '@ionic/angular'; 
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [ ExploreContainerComponent, IonicModule, CommonModule]
+  imports: [ ExploreContainerComponent, IonicModule, CommonModule, FormsModule]
 })
 
 
@@ -44,4 +45,15 @@ import { IonicModule } from '@ionic/angular';
           return '';
       }
     }
+
+    ajouterElement():void {
+      //console.log("first")
+      this.tableauNonTrie.push(this.version);
+    }
+  
+    version: string = "";
+
+    
+    
+
 }
