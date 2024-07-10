@@ -13,10 +13,19 @@
     </ion-toolbar>
   </ion-header>
 
+  <div>
+    <ion-searchbar placeholder="Search"></ion-searchbar>
+  </div>
+
  <div>
   <ion-label>Entrer votre donnée : </ion-label>
-  <ion-input [(ngModel)]="version"></ion-input>
+  <ion-input aria-label="myChange"
+  placeholder="Placer votre donnée ici" class="myData" helperText="Min. caractère" [counter]="true" [maxlength]="20" [(ngModel)]="version"></ion-input>
   <p>{{ version }}</p>
+
+  <ion-item>
+    <ion-input label="Email:" labelPlacement="floating"></ion-input>
+  </ion-item>
  </div>
  
  <div class="button-container" *ngIf="showButton">
