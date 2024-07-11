@@ -13,8 +13,9 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- -->
   <div>
-    <ion-searchbar placeholder="Search"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchItem" (ionInput)="filterItems()" placeholder="Search"></ion-searchbar>
   </div>
 
  <div>
@@ -37,7 +38,7 @@
 <div class="tableau-container">
     <h2>Tableau Non Trié :</h2>
     <ul class="liste-centree">
-      <li *ngFor="let item of tableauNonTrie" >{{ item }}</li>
+      <li *ngFor="let item of mySearch">{{ item }}</li>
     </ul>
   </div>
 

@@ -15,11 +15,18 @@ import { FormsModule } from '@angular/forms';
 
 
   export class Tab2Page {
-
     tableauNonTrie: string[] = ["Pomme", "Fraise", "Banane", "Framboise"];
     tableauTrie: string[] = [];
+    elementrecherche: any[] = [
+      {name: "Pomme", description:""}, 
+      {name:"Fraise", description: ""}, 
+      {name: "Banane", description: ""}, 
+      {name: "Framboise", descrption:""}
+    ];
     showButton: boolean = true; // Déclaration et initialisation de showButton
-  
+    searchItem: string = "";
+    mySearch : string[] = this.tableauNonTrie;
+
     constructor() {}
   
     trierTableauDeChaines(tableau: string[]): string[] {
@@ -27,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     }
   
     trierEtAfficher(): void {
-      this.tableauTrie = this.trierTableauDeChaines([...this.tableauNonTrie]);
+      this.tableauTrie = this.trierTableauDeChaines([...this.mySearch]);
       this.showButton = false; // Cache le bouton après le clic
     }
   
@@ -48,12 +55,18 @@ import { FormsModule } from '@angular/forms';
 
     ajouterElement():void {
       //console.log("first")
-      this.tableauNonTrie.push(this.version);
+      this.mySearch.push(this.version);
     }
   
     version: string = "";
 
     
-    
+  
+    filterItems() {
+      this.mySearch = this.tableauNonTrie.filter(item =>
+         item.toLowerCase().includes(this.searchItem.toLowerCase()) 
+      );
+      //console.log()
+    }
 
-}
+  }
