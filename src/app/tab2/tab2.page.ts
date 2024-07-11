@@ -18,10 +18,10 @@ import { FormsModule } from '@angular/forms';
     tableauNonTrie: string[] = ["Pomme", "Fraise", "Banane", "Framboise"];
     tableauTrie: string[] = [];
     elementrecherche: any[] = [
-      {name: "Pomme", description:""}, 
-      {name:"Fraise", description: ""}, 
-      {name: "Banane", description: ""}, 
-      {name: "Framboise", descrption:""}
+      {name: "Pomme", description:"", catégorie: ""}, 
+      {name:"Fraise", description: "", catégorie: ""}, 
+      {name: "Banane", description: "", catégorie: ""}, 
+      {name: "Framboise", descrption:"", catégorie: ""}
     ];
     showButton: boolean = true; // Déclaration et initialisation de showButton
     searchItem: string = "";
